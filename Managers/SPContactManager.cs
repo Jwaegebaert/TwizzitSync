@@ -68,7 +68,7 @@ internal class SPContactManager(ClientContext ctx)
         return new()
         {
             Id = item.Id,
-            TwizzitId = (int)(double)item.FieldValues[FieldConfig.Contact.TwizzitId],
+            TwizzitId = item.FieldValues[FieldConfig.Contact.TwizzitId]?.ToString(),
             Address = (string)item.FieldValues[FieldConfig.Contact.Address],
             Target = EnumExtensions.GetEnumValue<Models.Enum.Target>((string)item.FieldValues[FieldConfig.Contact.Target]),
         };
